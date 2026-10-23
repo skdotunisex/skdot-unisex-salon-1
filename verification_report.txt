@@ -1,0 +1,22 @@
+SKDOT VERIFIED BUSINESS + SEO + BOOKING FINAL
+
+Primary phone: 09064653935
+International/WhatsApp: +2349064653935
+Email: Kellymichael30011@gmail.com
+Instagram handle: @SKDOT_Style
+Google directions link: https://share.google/YyMmlFlYiVoUZnJIY
+
+Implemented:
+- Correct primary phone/WhatsApp across site
+- Netlify-compatible booking form with honeypot
+- WhatsApp booking handoff
+- Prices and operating hours retained from supplied business material
+- Home service flow retained
+- FAQ, booking policy, home-service policy, privacy and terms pages added
+- sitemap.xml and robots.txt added
+- Basic Open Graph metadata added
+- Existing image collection retained
+
+Important: exact physical address, home-service coverage, cancellation/deposit/payment rules and staff information are not invented where not supplied.
+
+Validation: 32 HTML pages; broken local references: 0; malformed HTML wrappers: 0

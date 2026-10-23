@@ -1,0 +1,6 @@
+SKDOT V30 shop audit update
+
+The shop now displays one unified catalogue rather than hiding owner-supplied products in a separate lower section. All additional items without a confirmed customer price are marked Price on request and use WhatsApp inquiry; they are not enabled for checkout. Only the three fixed-price products remain eligible for Paystack checkout until SKDOT confirms more retail prices.
+
+Production site: https://skdot-unisex-salon-1.netlify.app/
+Confirmed location: Shopping Complex, Alale Palace, 07 Street, Ute Road, Ilale 341104, Ondo State, Nigeria.

@@ -1,0 +1,15 @@
+SKDOT PAYSTACK INTEGRATION — PRODUCTION READY CODE
+
+- Secure server-side Paystack transaction initialization
+- Server-side catalogue and amount recalculation
+- Transaction reference tied to SKDOT order ID
+- Server-side transaction verification
+- Amount and NGN currency checks before marking an order paid
+- Signed Paystack charge.success webhook verification
+- Netlify Blobs persistent order storage
+- Cross-device order tracking endpoint
+- Secure admin session cookie
+- Admin status and shipping tracking updates
+- Payment callback page
+
+The live merchant secret is intentionally not included in this package. The existing Netlify project must contain PAYSTACK_SECRET_KEY, ADMIN_PIN and ADMIN_SESSION_SECRET. The Paystack account must be activated for live payments and the webhook URL must be configured.

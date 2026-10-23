@@ -1,0 +1,3 @@
+import { json, getStoreSafe } from './_shared.mts';
+import { requireAdmin } from './_admin-shared.mts';
+export default async request=>{const auth=await requireAdmin(request);if(!auth.ok)return auth.response;if(request.method!=='GET')return json({error:'Method not allowed'},405);const store=getStoreSafe();const {blobs}=await store.list({prefix:'events/'});const events:any[]=[];for(const b of blobs){const e=await store.get(b.key,{type:'json',consistency:'strong'});if(e)events.push(e)}events.sort((a,b)=>String(b.created_at).localeCompare(String(a.created_at)));return json({ok:true,events:events.slice(0,120)});};

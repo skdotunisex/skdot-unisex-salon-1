@@ -1,0 +1,1 @@
+export default async request=>new Response(JSON.stringify({ok:true}),{status:200,headers:{"Content-Type":"application/json; charset=utf-8","Set-Cookie":"skdot_admin=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0"}});

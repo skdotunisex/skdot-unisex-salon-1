@@ -1,0 +1,8 @@
+{
+  "name": "skdot-unisex-salon-commerce",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@netlify/blobs": "latest"
+  }
+}

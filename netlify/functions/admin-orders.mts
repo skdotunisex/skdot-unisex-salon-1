@@ -1,0 +1,2 @@
+import { json, getStoreSafe } from "./_shared.mts";import { requireAdmin } from "./_admin-shared.mts";
+export default async request=>{const auth=await requireAdmin(request);if(!auth.ok)return auth.response;const store=getStoreSafe();const {blobs}=await store.list({prefix:"orders/"});const orders=[];for(const b of blobs){const o=await store.get(b.key,{type:"json",consistency:"strong"});if(o)orders.push(o)}orders.sort((a,b)=>String(b.created).localeCompare(String(a.created)));return json({ok:true,orders});};

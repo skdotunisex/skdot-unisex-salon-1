@@ -1,0 +1,211 @@
+(() => {
+  const WA='2349064653935';
+  const sections = [
+    {id:'A', name:'Workshop Furniture & Major Equipment'},
+    {id:'B', name:'Hand Tools – Barbering & Hairstyling'},
+    {id:'C', name:'Electrical Equipment'},
+    {id:'D', name:'Backbar Products'},
+    {id:'E', name:'Retail Products (For Sale)'},
+    {id:'F', name:'Consumables & Disposables'}
+  ];
+  const items = [
+    // A
+    ['A','Hydraulic styling chair','Client seating, adjustable','Local','2–4','—','₦80k–₦250k','Workshop','Rotatable, with footrest'],
+    ['A','Barber chair','Male grooming, reclining','Local','1–2','—','₦150k–₦400k','Workshop','Heavy-duty'],
+    ['A','Shampoo / backwash unit','Hair washing','Local','1–2','—','₦120k–₦300k','Workshop','Ceramic basin, hot/cold'],
+    ['A','Reception desk','Client check-in','Local carpenter','1','—','₦50k–₦150k','Workshop','With storage'],
+    ['A','Waiting area chairs / sofa','Client comfort','Local','2–4','—','₦30k–₦120k each','Workshop','—'],
+    ['A','Retail display shelves','Product display','Local','1–2','—','₦20k–₦80k each','Workshop','—'],
+    ['A','Styling station (mirror + cabinet)','Work station','Local','2–4','—','₦60k–₦200k each','Workshop','With power outlets'],
+    ['A','Color bar station','Color mixing','Local','1','—','₦80k–₦200k','Workshop','Standalone'],
+    ['A','Dryer / steamer station','Processing','Local','1–2','—','₦70k–₦180k each','Workshop','Wall-mounted'],
+    ['A','Salon trolley / rolling cart','Tool transport','Local','2–3','—','₦15k–₦50k each','Workshop','—'],
+    ['A','Facial bed / spa bed','Facials','Local','1','—','₦90k–₦250k','Workshop','Adjustable'],
+    ['A','Manicure table with lamp','Nail services','Local','1','—','₦50k–₦150k','Workshop','—'],
+    ['A','Pedicure chair / foot basin','Pedicure','Local','1','—','₦80k–₦200k','Workshop','—'],
+    ['A','Stools (beautician)','Staff seating','Local','2–3','—','₦15k–₦40k each','Workshop','Rolling'],
+    ['A','Towel warmer machine','Hot towels','Local','1','—','₦40k–₦100k','Workshop','—'],
+    ['A','Air conditioner / fans','Comfort','Local','1–2','—','₦150k–₦400k','Workshop','—'],
+    ['A','Power backup (inverter/generator)','Power','Local','1','—','₦200k–₦800k','Workshop','Essential'],
+    ['A','Washing machine & dryer','Laundry','Local','1 each','—','₦150k–₦400k each','Workshop','—'],
+    ['A','Water heater / geyser','Hot water','Local','1','—','₦80k–₦200k','Workshop','—'],
+    // B1
+    ['B','Cordless hair clipper','Fades, cuts','Wahl Magic Clip','2','1 left','₦80k–₦150k','Backbar','Most requested'],
+    ['B','Adjustable blade clipper','Heavy cuts','Andis Master','1','1 left','₦120k–₦200k','Backbar','—'],
+    ['B','Hair trimmer (detailer)','Beard, lines','Wahl / Andis','1–2','1 left','₦50k–₦100k','Backbar','—'],
+    ['B','Foil shaver','Close shave','Wahl / Andis','1','1 left','₦60k–₦120k','Backbar','—'],
+    ['B','Clipper guards / combs','Sizes','Wahl / Andis','Full set','1 set','₦10k–₦30k','Backbar','—'],
+    ['B','Clipper oil','Maintenance','Wahl / Andis','3','1 left','₦2k–₦5k','Backbar','—'],
+    ['B','Clipper disinfectant spray','Hygiene','Barbicide','2','1 left','₦5k–₦10k','Backbar','—'],
+    ['B','Hair-cutting shears','Cutting','Any pro','2','1 left','₦20k–₦80k','Backbar','—'],
+    ['B','Thinning shears','Texturizing','Any pro','1–2','1 left','₦25k–₦70k','Backbar','—'],
+    ['B','Barber razor (straight)','Shaving','Parker / Feather','2','1 left','₦15k–₦50k','Backbar','—'],
+    ['B','Razor blades','Disposable','Feather','1 box','½ box','₦3k–₦8k','Backbar','—'],
+    ['B','Feathering razor','Texturizing','Any pro','1','1 left','₦10k–₦25k','Backbar','—'],
+    ['B','Hair shaper / razor','Shaping','Any pro','1','1 left','₦8k–₦20k','Backbar','—'],
+    ['B','Nail clippers','Manicure','Any pro','2','1 left','₦2k–₦5k','Backbar','—'],
+    ['B','Cuticle nippers','Nail care','Any pro','2','1 left','₦3k–₦8k','Backbar','—'],
+    ['B','Manicure scissors','Nail care','Any pro','2','1 left','₦2.5k–₦6k','Backbar','—'],
+    ['B','Tweezers','Brow shaping','Any pro','2','1 left','₦1.5k–₦4k','Backbar','—'],
+    ['B','Cutting comb','Daily cuts','Any pro','4','2 left','₦1k–₦3k','Backbar','—'],
+    ['B','Tail comb / pintail','Sectioning','Any pro','2','1 left','₦1k–₦2.5k','Backbar','—'],
+    ['B','Wide-tooth comb','Detangling','Any pro','2','1 left','₦1k–₦2.5k','Backbar','—'],
+    ['B','Rat-tail comb','Braiding','Any pro','2','1 left','₦1k–₦2.5k','Backbar','—'],
+    ['B','Barber brush (neck duster)','Hair removal','Any pro','2','1 left','₦2k–₦5k','Backbar','—'],
+    ['B','Round styling brush','Blow-dry','Any pro','3','1 left','₦2k–₦6k','Backbar','—'],
+    ['B','Paddle brush','Smoothing','Any pro','2','1 left','₦3k–₦8k','Backbar','—'],
+    ['B','Detangling brush','Wet hair','Any pro','2','1 left','₦2.5k–₦6k','Backbar','—'],
+    ['B','Shaving brush','Lather','Proraso / Parker','2','1 left','₦5k–₦15k','Backbar','—'],
+    ['B','Nail brush','Nail cleaning','Any pro','2','1 left','₦1k–₦3k','Backbar','—'],
+    ['B','Makeup brushes (set)','Makeup','Any pro','1 set','1 set','₦15k–₦50k','Backbar','—'],
+    ['B','Clipper cleaning brush','Maintenance','Any pro','2','1 left','₦1k–₦2.5k','Backbar','—'],
+    // C
+    ['C','Professional hair dryer','Blow-dry','Parlux / Babyliss','2','1 left','₦50k–₦150k','Backbar','Min 2000W'],
+    ['C','Hood dryer','Processing','Any pro','1','—','₦80k–₦200k','Backbar','—'],
+    ['C','Flat iron','Straightening','GHD / Babyliss','2','1 left','₦40k–₦120k','Backbar','—'],
+    ['C','Curling iron','Curls','Babyliss','2','1 left','₦30k–₦80k','Backbar','—'],
+    ['C','Crimping iron','Texture','Any pro','1','—','₦25k–₦60k','Backbar','—'],
+    ['C','Clipper sterilizer (UV)','Hygiene','Any pro','1','—','₦30k–₦80k','Backbar','10L'],
+    ['C','UV/LED nail lamp','Gel curing','Any pro','1','—','₦15k–₦40k','Backbar','—'],
+    ['C','Nail drill (electric)','Nail shaping','Any pro','1','—','₦30k–₦80k','Backbar','—'],
+    ['C','Facial steamer (ozone)','Skincare','Any pro','1','—','₦40k–₦100k','Backbar','—'],
+    ['C','Magnifying lamp','Detail work','Any pro','1','—','₦20k–₦60k','Backbar','—'],
+    ['C','Hot towel cabinet','Shaves','Any pro','1','—','₦40k–₦100k','Backbar','—'],
+    ['C','Hair color processor','Color','Any pro','1','—','₦50k–₦120k','Backbar','—'],
+    ['C','Skin analyser','Consultation','Any pro','1','—','₦80k–₦200k','Backbar','Optional'],
+    ['C','LED light therapy','Soothing','Any pro','1','—','₦100k–₦300k','Backbar','Optional'],
+    ['C','Microdermabrasion','Advanced facial','Any pro','1','—','₦150k–₦400k','Backbar','Optional'],
+    ['C','Galvanic / high-frequency','Facial','Any pro','1','—','₦100k–₦250k','Backbar','Optional'],
+    ['C','Rotary brush / vacuum','Deep cleanse','Any pro','1','—','₦120k–₦300k','Backbar','Optional'],
+    ['C','Wood lamp','Skin analysis','Any pro','1','—','₦30k–₦80k','Backbar','—'],
+    ['C','Paraffin wax warmer','Hand/foot','Any pro','1','—','₦25k–₦60k','Backbar','—'],
+    ['C','Wax heater','Hair removal','Any pro','1','—','₦20k–₦50k','Backbar','—'],
+    // D
+    ['D','Professional shampoo','Washing','Pureology, Redken','2 bottles','1 left','₦10k–₦30k','Backbar','By hair type'],
+    ['D','Professional conditioner','Conditioning','Pureology, Redken','2 bottles','1 left','₦10k–₦30k','Backbar','Matching'],
+    ['D','Deep conditioning mask','Treatment','Olaplex, Moroccanoil','2 jars','1 left','₦15k–₦40k','Backbar','—'],
+    ['D','Leave-in treatment','After-wash','Any pro','2 bottles','1 left','₦8k–₦25k','Backbar','—'],
+    ['D','Scalp treatment','Scalp care','Any pro','1 bottle','1 left','₦8k–₦20k','Backbar','—'],
+    ['D','Hair color','Coloring','Wella, Schwarzkopf','Assorted','—','₦5k–₦15k','Backbar','—'],
+    ['D','Color developer','Mixing','Any pro','Assorted','—','₦3k–₦8k','Backbar','10,20,30,40 vol'],
+    ['D','Bleach powder','Lightening','Any pro','2 tubs','1 left','₦10k–₦25k','Backbar','—'],
+    ['D','Toner / gloss','After bleach','Any pro','Assorted','—','₦8k–₦20k','Backbar','—'],
+    ['D','Perm solution','Perming','Any pro','1 kit','—','₦15k–₦35k','Backbar','—'],
+    ['D','Relaxer cream','Straightening','Any pro','1 tub','—','₦10k–₦25k','Backbar','—'],
+    ['D','Shaving cream / gel','Shaving','Proraso','3 tubes','1 left','₦4k–₦10k','Backbar','—'],
+    ['D','Aftershave balm (backbar)','Soothing','Proraso','2 bottles','1 left','₦6k–₦15k','Backbar','—'],
+    ['D','Talcum powder','Finishing','Any pro','2 bottles','1 left','₦2k–₦6k','Backbar','—'],
+    ['D','Styptic powder','Cuts','Any pro','1','1 left','₦2k–₦5k','Backbar','—'],
+    ['D','Facial cleanser','Facials','Any pro','2 bottles','1 left','₦5k–₦15k','Backbar','—'],
+    ['D','Facial exfoliant','Facials','Any pro','2 jars','1 left','₦6k–₦18k','Backbar','—'],
+    ['D','Facial mask','Facials','Any pro','2 jars','1 left','₦7k–₦20k','Backbar','—'],
+    ['D','Facial moisturizer','Facials','Any pro','2 jars','1 left','₦8k–₦22k','Backbar','—'],
+    ['D','Massage oil / lotion','Massage','Any pro','2 bottles','1 left','₦5k–₦15k','Backbar','—'],
+    ['D','Wax (hard & soft)','Hair removal','Any pro','2 tubs each','1 left','₦8k–₦20k','Backbar','—'],
+    ['D','Pre & post wax oil','Waxing','Any pro','1 each','1 left','₦4k–₦10k','Backbar','—'],
+    ['D','Nail polish remover','Nails','Any pro','2 bottles','1 left','₦2k–₦5k','Backbar','—'],
+    ['D','Hand & foot soak','Mani/pedi','Any pro','2 jars','1 left','₦4k–₦12k','Backbar','—'],
+    ['D','Cuticle oil (backbar)','Nails','Any pro','2 bottles','1 left','₦3k–₦8k','Backbar','—'],
+    ['D','Base & top coat','Nails','Any pro','2 each','1 left','₦3k–₦8k','Backbar','—'],
+    // E
+    ['E','Shampoo','Retail','Pureology, Redken','3','1 left','₦8k–₦25k','Retail','Best seller'],
+    ['E','Conditioner','Retail','Pureology, Redken','3','1 left','₦8k–₦25k','Retail','—'],
+    ['E','Deep conditioning mask','Retail','Olaplex, Moroccanoil','2','1 left','₦12k–₦35k','Retail','—'],
+    ['E','Hair oil / serum','Retail','Moroccanoil','2','1 left','₦10k–₦30k','Retail','—'],
+    ['E','Heat protectant spray','Retail','Tresemmé, Redken','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Hairspray','Retail',"L'Oréal, Elnett",'3','1 left','₦4k–₦12k','Retail','—'],
+    ['E','Styling cream','Retail','American Crew','2','1 left','₦6k–₦15k','Retail','—'],
+    ['E','Hair gel / pomade','Retail','American Crew, Reuzel','3','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Texture spray','Retail','Any pro','2','1 left','₦6k–₦18k','Retail','—'],
+    ['E','Dry shampoo','Retail','Amika, Batiste','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Beard oil','Retail','Reuzel, Aveda Men','2','1 left','₦5k–₦15k','Retail','High margin'],
+    ['E','Beard balm','Retail','Reuzel','2','1 left','₦6k–₦18k','Retail','—'],
+    ['E','Aftershave balm (retail)','Retail','Proraso','2','1 left','₦6k–₦15k','Retail','—'],
+    ['E','Aftershave cologne','Retail','L3VEL3','2','1 left','₦7k–₦20k','Retail','—'],
+    ['E','Shaving soap (bowl)','Retail','Proraso','3','1 left','₦4k–₦10k','Retail','—'],
+    ['E','Shaving brush (retail)','Retail','Proraso, Parker','2','1 left','₦6k–₦18k','Retail','—'],
+    ['E','Razor (retail)','Retail','Parker, Merkur','1','1 left','₦15k–₦50k','Retail','—'],
+    ['E','Facial cleanser','Retail','Any pro','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Facial moisturizer','Retail','Any pro','2','1 left','₦7k–₦20k','Retail','—'],
+    ['E','Facial serum','Retail','Any pro','2','1 left','₦10k–₦30k','Retail','—'],
+    ['E','Face mask','Retail','Any pro','2','1 left','₦4k–₦12k','Retail','—'],
+    ['E','Sunscreen','Retail','Any pro','2','1 left','₦6k–₦18k','Retail','—'],
+    ['E','Body lotion / butter','Retail','Any pro','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Body scrub','Retail','Any pro','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Cuticle oil (retail)','Retail','Any pro','2','1 left','₦3k–₦8k','Retail','—'],
+    ['E','Hand cream','Retail','Any pro','2','1 left','₦3k–₦8k','Retail','—'],
+    ['E','Nail polish','Retail','Any pro','6','3 left','₦1.5k–₦5k','Retail','—'],
+    ['E','Gel polish','Retail','Any pro','4','2 left','₦3k–₦8k','Retail','—'],
+    ['E','Nail polish remover','Retail','Any pro','2','1 left','₦2k–₦5k','Retail','—'],
+    ['E','Nail file / buffer','Retail','Any pro','5','2 left','₦1k–₦3k','Retail','—'],
+    ['E','Nail art brushes','Retail','Any pro','3','1 left','₦2k–₦5k','Retail','—'],
+    ['E','Hair clippers (retail)','Retail','Wahl','1','1 left','₦80k–₦150k','Retail','—'],
+    ['E','Blow dryer (retail)','Retail','Parlux','1','1 left','₦50k–₦120k','Retail','—'],
+    ['E','Flat iron (retail)','Retail','GHD','1','1 left','₦40k–₦100k','Retail','—'],
+    ['E','Round brush (retail)','Retail','Any pro','3','1 left','₦2k–₦6k','Retail','—'],
+    ['E','Comb set','Retail','Any pro','3','1 left','₦3k–₦8k','Retail','—'],
+    ['E','Hair accessories','Retail','Any pro','Assorted','—','₦1k–₦5k','Retail','—'],
+    ['E','Essential oils','Retail','Any pro','3','1 left','₦3k–₦10k','Retail','—'],
+    ['E','Travel-sized kits','Retail','Any pro','2','1 left','₦5k–₦15k','Retail','—'],
+    ['E','Candles / diffusers','Retail','Any pro','2','1 left','₦5k–₦15k','Retail','—'],
+    // F
+    ['F','Barber capes','Protection','Any','6','3 left','₦3k–₦8k','Backbar','—'],
+    ['F','Chemical capes','Protection','Any','4','2 left','₦4k–₦10k','Backbar','—'],
+    ['F','Neck strips / tape','Hygiene','Any','3 rolls','1 roll','₦2k–₦5k','Backbar','—'],
+    ['F','Towels','Drying','Any','24','12 left','₦1.5k–₦4k','Backbar','—'],
+    ['F','Disposable gloves','Hygiene','Any','2 boxes','1 box','₦5k–₦12k','Backbar','—'],
+    ['F','Hairdressing foil','Highlights','Any','2 rolls','1 roll','₦3k–₦8k','Backbar','—'],
+    ['F','Hair coloring caps','Highlights','Any','1 pack','½ pack','₦2k–₦5k','Backbar','—'],
+    ['F','Cotton pads / balls','Hygiene','Any','2 packs','1 pack','₦1.5k–₦4k','Backbar','—'],
+    ['F','Cotton swabs','Detail','Any','1 box','½ box','₦1k–₦3k','Backbar','—'],
+    ['F','Tissue / paper towels','Daily','Any','2 packs','1 pack','₦2k–₦5k','Backbar','—'],
+    ['F','Aluminum foil','Color','Any','1 roll','½ roll','₦2k–₦5k','Backbar','—'],
+    ['F','Spray bottles','Water/clean','Any','4','2 left','₦1k–₦3k','Backbar','—'],
+    ['F','Color mixing bowls','Color','Any','4 each','2 left','₦2k–₦5k','Backbar','—'],
+    ['F','Hair sectioning clips','Styling','Any','20','10 left','₦500–₦2k','Backbar','—'],
+    ['F','Hair pins / bobby pins','Styling','Any','2 packs','1 pack','₦1k–₦3k','Backbar','—'],
+    ['F','Rubber bands / hair ties','Styling','Any','1 pack','½ pack','₦1k–₦2.5k','Backbar','—'],
+    ['F','End papers','Perms','Any','1 pack','½ pack','₦1.5k–₦4k','Backbar','—'],
+    ['F','Perm rods','Perms','Any','1 set','—','₦5k–₦15k','Backbar','—'],
+    ['F','Nail tips','Nails','Any','1 box','½ box','₦3k–₦8k','Backbar','—'],
+    ['F','Acrylic powder & monomer','Nails','Any','1 kit','—','₦8k–₦20k','Backbar','—'],
+    ['F','Gel top & base coat','Nails','Any','2 each','1 left','₦3k–₦8k','Backbar','—'],
+    ['F','Wooden sticks','Nails','Any','1 pack','½ pack','₦1k–₦3k','Backbar','—'],
+    ['F','Wax strips','Waxing','Any','2 packs','1 pack','₦2k–₦6k','Backbar','—'],
+    ['F','Wooden spatulas','Waxing','Any','1 pack','½ pack','₦1.5k–₦4k','Backbar','—'],
+    ['F','Face masks (disposable)','Staff','Any','1 box','½ box','₦2k–₦5k','Backbar','—'],
+    ['F','Hand sanitizer','Hygiene','Any','3 bottles','1 left','₦2k–₦5k','Backbar','—'],
+    ['F','Alcohol (70/80%)','Disinfection','Any','2 bottles','1 left','₦2k–₦5k','Backbar','—'],
+    ['F','Barbicide concentrate','Disinfection','Barbicide','1 bottle','½ left','₦5k–₦12k','Backbar','—'],
+    ['F','Disinfecting wipes','Cleaning','Any','2 packs','1 pack','₦2k–₦6k','Backbar','—'],
+    ['F','Trash bags','Waste','Any','1 roll','½ roll','₦1k–₦3k','Backbar','—'],
+    ['F','Laundry bags','Linen','Any','2','1 left','₦2k–₦5k','Backbar','—'],
+    ['F','First aid kit','Safety','Any','1','—','₦5k–₦15k','Backbar','—']
+  ].map((x,i)=>({id:`inv-${i+1}`,section:x[0],item:x[1],purpose:x[2],brand:x[3],startQty:x[4],reorder:x[5],price:x[6],type:x[7],notes:x[8]}));
+
+  const sectionName = id => (sections.find(s=>s.id===id)||{}).name || id;
+  const escape = s => String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+  const render = () => {
+    const tbody=document.querySelector('#inventory-body'); if(!tbody)return;
+    const q=(document.querySelector('#inventory-search')?.value||'').toLowerCase().trim();
+    const sec=document.querySelector('#inventory-section')?.value||'all';
+    const type=document.querySelector('#inventory-type')?.value||'all';
+    const filtered=items.filter(x=>(sec==='all'||x.section===sec)&&(type==='all'||x.type.toLowerCase()===type)&&(q===''||[x.item,x.purpose,x.brand,x.notes,x.price].join(' ').toLowerCase().includes(q)));
+    tbody.innerHTML=filtered.map(x=>`<tr><td><span class="inv-section">${escape(x.section)}</span><small>${escape(sectionName(x.section))}</small></td><td><strong>${escape(x.item)}</strong><small>${escape(x.purpose)}</small></td><td>${escape(x.brand)}</td><td>${escape(x.startQty)}</td><td>${escape(x.reorder)}</td><td><strong>${escape(x.price)}</strong><small>estimate</small></td><td><span class="inv-type ${x.type==='Retail'?'retail':x.type==='Workshop'?'workshop':'backbar'}">${escape(x.type)}</span></td><td>${escape(x.notes)}</td></tr>`).join('') || '<tr><td colspan="8"><div class="empty-state"><h3>No inventory items match your search.</h3><p>Try another category or search term.</p></div></td></tr>';
+    document.querySelector('#inventory-count').textContent=`Showing ${filtered.length} of ${items.length} items`;
+  };
+  const init=()=>{
+    const sec=document.querySelector('#inventory-section'); if(sec)sec.innerHTML='<option value="all">All sections</option>'+sections.map(s=>`<option value="${s.id}">Section ${s.id} · ${escape(s.name)}</option>`).join('');
+    document.querySelectorAll('#inventory-search,#inventory-section,#inventory-type').forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',render));
+    document.querySelector('#inventory-export')?.addEventListener('click',()=>{
+      const header=['Section','Item','Purpose','Brand/Supplier','Start Qty','Reorder','Estimated Price','Type','Notes'];
+      const rows=items.map(x=>[sectionName(x.section),x.item,x.purpose,x.brand,x.startQty,x.reorder,x.price,x.type,x.notes]);
+      const csv=[header,...rows].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\n');
+      const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='SKDOT-master-inventory.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+    });
+    document.querySelector('#inventory-whatsapp')?.addEventListener('click',()=>{location.href=`https://wa.me/${WA}?text=${encodeURIComponent('Hello SKDOT, I want to discuss supplier pricing and stock for the master salon inventory.')}`});
+    render();
+  };
+  window.SKDOT_INVENTORY={items,sections};
+  init();
+})();

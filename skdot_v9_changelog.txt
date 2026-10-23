@@ -1,0 +1,9 @@
+SKDOT V9 — PREMIUM HOMEPAGE + SHOP EXPANSION
+===============================================
+1. Redesigned index.html for a more realistic and welcoming salon experience.
+2. Added dedicated service, shop, experience, gallery, home-service, booking and location pathways.
+3. Added bold solid five-item mobile navigation: Home, Services, Shop, WhatsApp, Book.
+4. Added low-cost shop products and updated the professional clipper to the verified marketplace snapshot used during this build.
+5. Customer-facing shop contains no Temu links or Temu branding.
+6. Existing Paystack/Netlify functions and checkout files were preserved.
+7. Existing pages/assets were preserved; this is an additive redesign.
